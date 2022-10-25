@@ -110,7 +110,7 @@ const PrimalForm = (props) => {
                     <b style={{ color: 'red', fontSize: '12px' }}>{formErrors.email && formErrors.email}</b>
                     <br />
                     <br />
-                    <label style={{color:'white'}}>Password: </label> &nbsp; <span style={{color:'#a3c2c2',fontSize:'11.5px'}}>{pwdMsg}</span>
+                    <label style={{color:'white'}}>Password: </label> &nbsp; { formType==='register' && <span style={{color:'#a3c2c2',fontSize:'11.5px'}}>{pwdMsg}</span>}
                     <input style={{ width: '100%' }} type='password' placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} onFocus={()=>setPwdMsg('password must have minimum 8 characters')} onBlur={()=>setPwdMsg('')} />
                     <b style={{ color: 'red', fontSize: '12px' }}>{formErrors.password && formErrors.password}</b>
                     <br />
@@ -119,7 +119,7 @@ const PrimalForm = (props) => {
                         formType === 'register' && (
                             <div>
                             <label style={{color:'white'}}>Re-enter password: </label> &nbsp;
-                            <input style={{ width: '100%',backgroundColor:(password===pwdChk&&pwdChk.length) && 'rgb(153, 255, 201'}}  type='password' placeholder="password" value={pwdChk} onChange={(e) => setPwdChk(e.target.value)} />
+                            <input style={{ width: '100%',backgroundColor:(password===pwdChk&&pwdChk.length>8) && 'rgb(153, 255, 201'}}  type='password' placeholder="password" value={pwdChk} onChange={(e) => setPwdChk(e.target.value)} />
                             <br />
                             <br />
                             </div>
@@ -129,7 +129,7 @@ const PrimalForm = (props) => {
                         formType === 'login' && <Button variant="success" type="submit">Login</Button>
                     }
                     {
-                        formType === 'register' && <Button disabled={!(password===pwdChk&&pwdChk.length)} variant="success" type="submit">Sign-up</Button>
+                        formType === 'register' && <Button disabled={!(password===pwdChk&&pwdChk.length>8)} variant="success" type="submit">Sign-up</Button>
                     }
                     <br/>
                     <br/>

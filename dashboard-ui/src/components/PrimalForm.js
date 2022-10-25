@@ -12,6 +12,7 @@ const PrimalForm = (props) => {
     const [formErrors, setFormErrors] = useState({})
     const [loginError,setLoginError] = useState('')
     const [regError,setRegError] = useState('')
+    const [pwdMsg,setPwdMsg] = useState('')
 
     // console.log(rtrObj)
 
@@ -63,7 +64,7 @@ const PrimalForm = (props) => {
                         } else {
                             if(response.data.code===11000){ 
                                 setRegError('email already registered')
-                                setTimeout(()=>window.location.reload(),50000)
+                                setTimeout(()=>window.location.reload(),100000)
                             }
                             else{
                                 swal({
@@ -109,8 +110,8 @@ const PrimalForm = (props) => {
                     <b style={{ color: 'red', fontSize: '12px' }}>{formErrors.email && formErrors.email}</b>
                     <br />
                     <br />
-                    <label style={{color:'white'}}>Password: </label> &nbsp;
-                    <input style={{ width: '100%' }} type='password' placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <label style={{color:'white'}}>Password: </label> &nbsp; <span style={{color:'#a3c2c2',fontSize:'11.5px'}}>{pwdMsg}</span>
+                    <input style={{ width: '100%' }} type='password' placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} onFocus={()=>setPwdMsg('password must have minimum 8 characters')} onBlur={()=>setPwdMsg('')} />
                     <b style={{ color: 'red', fontSize: '12px' }}>{formErrors.password && formErrors.password}</b>
                     <br />
                     <br />

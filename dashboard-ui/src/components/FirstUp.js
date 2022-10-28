@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import PrimalImg from "./PrimalImg";
 import Login from "./Login";
 import Register from "./Register";
+import CollageUi from "./CollageUi";
 
 const FirstUp = () => {
     return(
@@ -22,7 +23,7 @@ const FirstUp = () => {
             <Route path='/login' component={Login} exact={true} />
             <Route path='/register' component={Register} exact={true} />
             <Route path='/' component={PrimalImg} exact={true} />
-            {/* <Route path='/home' component={App} exact={true} /> */}
+            <Route path='/home' component={CollageUi} exact={true} />
         </div>
     )
 }

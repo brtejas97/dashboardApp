@@ -4,21 +4,13 @@ import GaugeChart from 'react-gauge-chart'
 const GgChart = () => {
 
     return (
-        <div style={{ backgroundColor: 'black' }}>
-            <h5 style={{ color: 'white' }}>AQI  Delhi- 350</h5>
+        <div style={{ backgroundColor: '#2f4f4f', borderRadius:'5px'  }}>
+            <h6 style={{ color: 'white',paddingLeft:'7px',paddingTop:'5px'}}>Washroom AQI</h6>
             <GaugeChart id="gauge-chart6"
                 animate={true}
                 nrOfLevels={15}
-                percent={0.66}
-                needleColor="#789456"
-            />
-            <hr style={{color:'white'}} />
-            <h5 style={{ color: 'white' }}>AQI  Dehradun- 125 </h5>
-            <GaugeChart id="gauge-chart6"
-                animate={true}
-                // nrOfLevels={15}
-                percent={0.25}
-                needleColor="#789456"
+                percent={0.34}
+                needleColor="black"
             />
         </div>
     )

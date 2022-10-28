@@ -3,8 +3,9 @@ import ReactDOM from "react-dom"
 import {BrowserRouter} from 'react-router-dom'
 
 import App from "./components/App"
+import LogCheck from "./components/LogCheck";
 
 ReactDOM.render(
     <BrowserRouter>
-        <App/>
+        <LogCheck/>
     </BrowserRouter>,document.getElementById('root'))

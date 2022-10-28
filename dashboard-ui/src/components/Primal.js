@@ -1,10 +1,16 @@
 import React from "react";
 import FirstUp from "./FirstUp";
 import Dashboard from "./Dashboard";
+import CollageUi from "./CollageUi";
 
 const Primal = () => {
     return(
-        localStorage.getItem('nhance') ? <Dashboard/> : <FirstUp/>
+        <div>
+            {
+                    localStorage.getItem('nhance') ? <CollageUi/> : <FirstUp/>
+            }
+        </div>
+        
     )
 }
 
